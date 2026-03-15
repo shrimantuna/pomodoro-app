@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #2A2420;
+  --ink2: #5C4E44;
+  --stone: #9A8E84;
+  --sage: #7A9E7E;
+  --sage-dk: #4A7E50;
+  --sage-bg: rgba(122, 158, 126, 0.1);
+  --sage-bd: rgba(122, 158, 126, 0.28);
+  --paper: #FEFCF9;
+  --cream: #F2EDE6;
+  --mist: #EDE9E2;
+  --border: #DDD8D0;
+  --border2: #C8C0B4;
+  --r-sm: 7px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-pill: 20px;
+  --serif: 'Shippori Mincho', serif;
+  --mono: 'Space Mono', monospace;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--serif);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+}
+
+.app {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2px;
+  margin-bottom: 4px;
+}
+
+.app-title {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .22em;
+  color: var(--stone);
+  text-transform: uppercase;
+}
+
+.s-badge {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .1em;
+  color: var(--sage-dk);
+  background: var(--sage-bg);
+  padding: 4px 11px;
+  border-radius: var(--r-pill);
+  border: .5px solid var(--sage-bd);
+}
+
+/* ── Avatar card ── */
+.av-card {
+  background: var(--paper);
+  border: .5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.5rem 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .65rem;
+}
+
+.quote {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--stone);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.85;
+  max-width: 300px;
+  transition: opacity .4s;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--paper);
+  border: .5px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.25rem;
+}
+
+/* ── Mode tabs ── */
+.mode-tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1.1rem;
+  flex-wrap: wrap;
+}
+
+.mtab {
+  font-family: var(--serif);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--stone);
+  padding: 5px 13px;
+  border-radius: var(--r-pill);
+  border: .5px solid var(--border);
+  cursor: pointer;
+  background: transparent;
+  transition: all .18s;
+}
+
+.mtab:hover {
+  border-color: var(--border2);
+  color: var(--ink2);
+}
+
+.mtab.on {
+  background: var(--sage);
+  color: #fff;
+  border-color: var(--sage);
+}
+
+/* ── Timer display ── */
+.t-display {
+  font-family: var(--mono);
+  font-size: 58px;
+  font-weight: 400;
+  color: var(--ink);
+  text-align: center;
+  letter-spacing: -.02em;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.prog-wrap {
+  height: 2px;
+  background: var(--mist);
+  border-radius: 2px;
+  margin-bottom: 1.1rem;
+  overflow: hidden;
+}
+
+.prog-fill {
+  height: 100%;
+  background: var(--sage);
+  border-radius: 2px;
+  transition: width 1s linear;
+}
+
+/* ── Buttons ── */
+.ctrls {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-primary {
+  flex: 1;
+  padding: 11px 20px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  background: var(--sage);
+  color: #ffffff;
+  border: .5px solid var(--sage);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: opacity .18s;
+}
+
+.btn-primary:hover {
+  opacity: .85;
+}
+
+.btn-secondary {
+  padding: 11px 16px;
+  font-family: var(--serif);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: .06em;
+  background: transparent;
+  color: var(--ink2);
+  border: .5px solid var(--border2);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: background .18s;
+}
+
+.btn-secondary:hover {
+  background: var(--mist);
+}
+
+/* ── Section label ── */
+.sec-lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .2em;
+  color: var(--stone);
+  text-transform: uppercase;
+  margin-bottom: .7rem;
+}
+
+/* ── Tasks ── */
+.t-row {
+  display: flex;
+  gap: 7px;
+}
+
+.t-in {
+  flex: 1;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-family: var(--serif);
+  font-weight: 400;
+  border: .5px solid var(--border2);
+  border-radius: var(--r-sm);
+  background: var(--cream);
+  color: var(--ink);
+  outline: none;
+  transition: border .18s;
+}
+
+.t-in:focus {
+  border-color: var(--sage);
+}
+
+.t-in::placeholder {
+  color: var(--stone);
+}
+
+.t-add {
+  padding: 9px 14px;
+  background: transparent;
+  border: .5px solid var(--border2);
+  border-radius: var(--r-sm);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--sage);
+  transition: background .15s;
+}
+
+.t-add:hover {
+  background: var(--mist);
+}
+
+.t-list {
+  margin-top: .65rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.t-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--ink);
+  padding: 8px 2px;
+  border-bottom: .5px solid var(--mist);
+}
+
+.t-item:last-child {
+  border-bottom: none;
+}
+
+.t-chk {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--border2);
+  cursor: pointer;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+}
+
+.t-chk.done {
+  background: var(--sage);
+  border-color: var(--sage);
+}
+
+.t-txt {
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink);
+  transition: color .15s;
+}
+
+.t-txt.done {
+  text-decoration: line-through;
+  color: var(--stone);
+}
+
+.t-del {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: var(--border2);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0 2px;
+  line-height: 1;
+  font-family: var(--mono);
+  transition: color .15s;
+}
+
+.t-del:hover {
+  color: #A05050;
+}
+
+/* ── Ambient sounds ── */
+.amb-row {
+  display: flex;
+  gap: 7px;
+}
+
+.amb-btn {
+  flex: 1;
+  padding: 9px 4px;
+  font-family: var(--serif);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .04em;
+  border: .5px solid var(--border);
+  border-radius: var(--r-sm);
+  background: transparent;
+  color: var(--ink2);
+  cursor: pointer;
+  transition: all .18s;
+  text-align: center;
+}
+
+.amb-btn:hover {
+  border-color: var(--border2);
+  background: var(--mist);
+}
+
+.amb-btn.on {
+  background: var(--sage-bg);
+  border-color: var(--sage-bd);
+  color: var(--sage-dk);
+}
+
+/* ── Avatar animations ── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-5px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scaleY(1); }
+  50%      { transform: scaleY(1.03); }
+}
+
+@keyframes blink {
+  0%, 88%, 100% { transform: scaleY(1); }
+  93%           { transform: scaleY(.08); }
+}
+
+@keyframes pop {
+  0%, 100% { opacity: 0; transform: scale(.5); }
+  50%      { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50%      { transform: rotate(4deg); }
+}
+
+.a-float { animation: float 4s ease-in-out infinite; }
+.a-body  { animation: breathe 3s ease-in-out infinite; transform-origin: center 80px; }
+.a-blink { animation: blink 5s ease-in-out infinite; transform-origin: center; }
+.a-pop   { animation: pop 1.8s ease-in-out infinite; }
+.a-pop2  { animation: pop 1.8s ease-in-out infinite; animation-delay: .6s; }
+.a-pop3  { animation: pop 1.8s ease-in-out infinite; animation-delay: 1.2s; }
+.a-sway  { animation: sway 2.5s ease-in-out infinite; transform-origin: 60px 22px; }
