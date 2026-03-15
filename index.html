@@ -4,69 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>集中 · Pomodoro</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-  <div class="app">
-
-    <div class="header">
-      <span class="app-title">集中 · Pomodoro</span>
-      <span class="s-badge" id="sBadge">0 sessions</span>
-    </div>
-
-    <div class="av-card">
-      <svg id="av" viewBox="0 0 120 110" width="124" height="124" xmlns="http://www.w3.org/2000/svg"></svg>
-      <p class="quote" id="qt">今この瞬間に集中する · Focus on this moment</p>
-    </div>
-
-    <div class="card">
-      <div class="mode-tabs">
-        <button class="mtab on" onclick="setMode('focus', this)">Focus · 25:00</button>
-        <button class="mtab" onclick="setMode('short', this)">Short · 5:00</button>
-        <button class="mtab" onclick="setMode('long', this)">Long · 15:00</button>
-      </div>
-      <div class="t-display" id="td">25:00</div>
-      <div class="prog-wrap"><div class="prog-fill" id="pf" style="width:100%"></div></div>
-      <div class="ctrls">
-        <button class="btn-primary" id="sb" onclick="toggleTimer()">Start</button>
-        <button class="btn-secondary" onclick="resetTimer()">Reset</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="sec-lbl">Today's tasks</div>
-      <div class="t-row">
-        <input class="t-in" id="ti" placeholder="Add a task…" onkeydown="if(event.key==='Enter') addTask()">
-        <button class="t-add" onclick="addTask()">+</button>
-      </div>
-      <div class="t-list" id="tl"></div>
-    </div>
-
-    <div class="card">
-      <div class="sec-lbl">Ambient sounds</div>
-      <div class="amb-row">
-        <button class="amb-btn" id="rainB" onclick="toggleAmb('rain')">🌧 Rain</button>
-        <button class="amb-btn" id="forestB" onclick="toggleAmb('forest')">🌿 Forest</button>
-        <button class="amb-btn" id="cafeB" onclick="toggleAmb('cafe')">☕ Café</button>
-      </div>
-    </div>
-
-  </div>
-
-  <script src="script.js"></script>
-
-</body>
-</html>
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>集中 · Pomodoro</title>
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -788,6 +725,6 @@
   </script>
 
 </body>
-</html> -->
+</html>
 
 
